@@ -39,3 +39,10 @@ jobs:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             publish_dir: ./storybook-static
             destination_dir: ${{ github.actor }}/storybook
+
+        - name: Show URL
+          if: success()
+          run: |
+              echo "URL: https://${{ github.repository_owner }}.github.io/comparison-matrix/${{ github.actor }}/storybook""
+
+  
